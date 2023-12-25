@@ -14,17 +14,25 @@
 #define VCI_USBCAN_2E_U 	21
 
 
-#define UINT    unsigned int
-#define BYTE    unsigned char
-#define USHORT  unsigned short
-#define UCHAR   unsigned char
-#define UINT64  unsigned long long
-#define CHAR    char
-#define DWORD   unsigned int
-#define ULONG   unsigned long
-#define PVOID   void *
-#define INT     int
+//#define UINT    unsigned int
+//#define BYTE    unsigned char
+//#define USHORT  unsigned short
+//#define UCHAR   unsigned char
+//#define UINT64  unsigned long long
+//#define CHAR    char
+//#define DWORD   unsigned int
+//#define ULONG   unsigned long
+//#define PVOID   void *
+//#define INT     int
 
+typedef unsigned char       BYTE;
+typedef char				CHAR;
+typedef unsigned char		UCHAR;
+typedef int                 INT;
+typedef unsigned int        UINT;//4byte
+typedef unsigned short		USHORT;
+typedef unsigned long		ULONG;
+typedef unsigned long       DWORD;
 
 //函数调用返回状态值
 #define	STATUS_OK					1
@@ -46,7 +54,7 @@ typedef  struct  _VCI_BOARD_INFO{
 
 //2.定义CAN信息帧的数据类型。
 typedef  struct  _VCI_CAN_OBJ{
-	UINT	ID;
+    UINT	ID;
 	UINT	TimeStamp;
 	BYTE	TimeFlag;
 	BYTE	SendType;
@@ -83,7 +91,7 @@ EXTERNC DWORD __stdcall VCI_InitCAN(DWORD DeviceType, DWORD DeviceInd, DWORD CAN
 
 EXTERNC DWORD __stdcall VCI_ReadBoardInfo(DWORD DeviceType,DWORD DeviceInd,PVCI_BOARD_INFO pInfo);
 
-EXTERNC DWORD __stdcall VCI_SetReference(DWORD DeviceType,DWORD DeviceInd,DWORD CANInd,DWORD RefType,PVOID pData);
+EXTERNC DWORD __stdcall VCI_SetReference(DWORD DeviceType,DWORD DeviceInd,DWORD CANInd,DWORD RefType,void  *Data);
 
 EXTERNC ULONG __stdcall VCI_GetReceiveNum(DWORD DeviceType,DWORD DeviceInd,DWORD CANInd);
 EXTERNC DWORD __stdcall VCI_ClearBuffer(DWORD DeviceType,DWORD DeviceInd,DWORD CANInd);

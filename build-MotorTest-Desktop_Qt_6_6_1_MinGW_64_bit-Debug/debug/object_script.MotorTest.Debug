@@ -1,0 +1,11 @@
+debug/canseting.o
+debug/canthread.o
+debug/main.o
+debug/mainwindow.o
+debug/motor.o
+debug/qcustomplot.o
+debug/moc_canseting.o
+debug/moc_canthread.o
+debug/moc_mainwindow.o
+debug/moc_motor.o
+debug/moc_qcustomplot.o

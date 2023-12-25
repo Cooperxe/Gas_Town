@@ -1,0 +1,11 @@
+release/canseting.o
+release/canthread.o
+release/main.o
+release/mainwindow.o
+release/motor.o
+release/qcustomplot.o
+release/moc_canseting.o
+release/moc_canthread.o
+release/moc_mainwindow.o
+release/moc_motor.o
+release/moc_qcustomplot.o

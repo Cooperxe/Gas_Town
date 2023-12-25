@@ -3,6 +3,9 @@
 
 #include <QMainWindow>
 #include "canseting.h"
+#include "canthread.h"
+#include "motor.h"
+#include "ControlCAN.h"
 
 namespace Ui {
 class MainWindow;
@@ -16,19 +19,27 @@ public:
     explicit MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
-    void CANMenu();
 
+    void CANMenu();
+    void ModelViewShow();
 private slots:
-    void openCanSetWindow();
+    void CanSetWindow();
+    void CanOpenWindow();
+    void SendCAN(quint32 ID,quint16 *charge ,bool state);
 
 private:
     Ui::MainWindow *ui;
+    bool CANState;
+
     QMenu *fileMenu;
     QMenu *editMenu;
     QMenu *helpMenu;
 
     QAction *setCAN_action ;
-    Canseting *CansetWidget;
+    QAction *openCAN_action;
+
+    Canseting *CANsetting;
+    CANThread *canthread;
 };
 
 #endif // MAINWINDOW_H
