@@ -25,7 +25,7 @@ QT_BEGIN_NAMESPACE
 class Ui_motor
 {
 public:
-    QGridLayout *gridLayout_3;
+    QGridLayout *gridLayout_4;
     QGridLayout *gridLayout;
     QLabel *label_6;
     QLabel *label_2;
@@ -59,29 +59,29 @@ public:
     QLabel *label_25;
     QLabel *label_29;
     QLabel *label_33;
-    QVBoxLayout *verticalLayout;
-    QLabel *label;
-    QSpacerItem *verticalSpacer;
     QGroupBox *groupBox;
     QVBoxLayout *verticalLayout_2;
     QCustomPlot *Motorqcustomplot;
-    QGridLayout *gridLayout_2;
-    QLineEdit *lineEdit_3;
-    QLabel *label_35;
-    QLabel *label_34;
-    QLineEdit *lineEdit_2;
+    QGridLayout *gridLayout_3;
     QLineEdit *lineEdit;
-    QPushButton *pushButton;
+    QLabel *label_35;
+    QLineEdit *lineEdit_3;
+    QLabel *label_34;
     QPushButton *pushButton_2;
+    QLineEdit *lineEdit_2;
+    QVBoxLayout *verticalLayout;
+    QSpacerItem *verticalSpacer;
     QPushButton *statusbotton;
+    QGridLayout *gridLayout_2;
+    QPushButton *pushButton;
 
     void setupUi(QGroupBox *motor)
     {
         if (motor->objectName().isEmpty())
             motor->setObjectName("motor");
-        motor->resize(1001, 436);
-        gridLayout_3 = new QGridLayout(motor);
-        gridLayout_3->setObjectName("gridLayout_3");
+        motor->resize(1001, 444);
+        gridLayout_4 = new QGridLayout(motor);
+        gridLayout_4->setObjectName("gridLayout_4");
         gridLayout = new QGridLayout();
         gridLayout->setObjectName("gridLayout");
         label_6 = new QLabel(motor);
@@ -245,21 +245,7 @@ public:
         gridLayout->addWidget(label_33, 2, 7, 1, 1);
 
 
-        gridLayout_3->addLayout(gridLayout, 0, 0, 1, 4);
-
-        verticalLayout = new QVBoxLayout();
-        verticalLayout->setObjectName("verticalLayout");
-        label = new QLabel(motor);
-        label->setObjectName("label");
-
-        verticalLayout->addWidget(label);
-
-        verticalSpacer = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
-
-        verticalLayout->addItem(verticalSpacer);
-
-
-        gridLayout_3->addLayout(verticalLayout, 1, 1, 1, 1);
+        gridLayout_4->addLayout(gridLayout, 0, 0, 1, 3);
 
         groupBox = new QGroupBox(motor);
         groupBox->setObjectName("groupBox");
@@ -273,52 +259,68 @@ public:
         verticalLayout_2->addWidget(Motorqcustomplot);
 
 
-        gridLayout_3->addWidget(groupBox, 1, 0, 1, 1);
+        gridLayout_4->addWidget(groupBox, 1, 0, 3, 1);
 
-        gridLayout_2 = new QGridLayout();
-        gridLayout_2->setObjectName("gridLayout_2");
-        lineEdit_3 = new QLineEdit(motor);
-        lineEdit_3->setObjectName("lineEdit_3");
+        gridLayout_3 = new QGridLayout();
+        gridLayout_3->setObjectName("gridLayout_3");
+        lineEdit = new QLineEdit(motor);
+        lineEdit->setObjectName("lineEdit");
 
-        gridLayout_2->addWidget(lineEdit_3, 1, 1, 1, 1);
+        gridLayout_3->addWidget(lineEdit, 0, 1, 1, 1);
 
         label_35 = new QLabel(motor);
         label_35->setObjectName("label_35");
 
-        gridLayout_2->addWidget(label_35, 1, 0, 1, 1);
+        gridLayout_3->addWidget(label_35, 1, 0, 1, 1);
+
+        lineEdit_3 = new QLineEdit(motor);
+        lineEdit_3->setObjectName("lineEdit_3");
+
+        gridLayout_3->addWidget(lineEdit_3, 1, 1, 1, 1);
 
         label_34 = new QLabel(motor);
         label_34->setObjectName("label_34");
 
-        gridLayout_2->addWidget(label_34, 0, 0, 1, 1);
+        gridLayout_3->addWidget(label_34, 0, 0, 1, 1);
+
+        pushButton_2 = new QPushButton(motor);
+        pushButton_2->setObjectName("pushButton_2");
+
+        gridLayout_3->addWidget(pushButton_2, 2, 0, 1, 1);
 
         lineEdit_2 = new QLineEdit(motor);
         lineEdit_2->setObjectName("lineEdit_2");
 
-        gridLayout_2->addWidget(lineEdit_2, 3, 1, 1, 1);
+        gridLayout_3->addWidget(lineEdit_2, 2, 1, 1, 1);
 
-        lineEdit = new QLineEdit(motor);
-        lineEdit->setObjectName("lineEdit");
 
-        gridLayout_2->addWidget(lineEdit, 0, 1, 1, 1);
+        gridLayout_4->addLayout(gridLayout_3, 1, 1, 1, 2);
 
+        verticalLayout = new QVBoxLayout();
+        verticalLayout->setObjectName("verticalLayout");
+        verticalSpacer = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
+
+        verticalLayout->addItem(verticalSpacer);
+
+
+        gridLayout_4->addLayout(verticalLayout, 2, 1, 2, 1);
+
+        statusbotton = new QPushButton(motor);
+        statusbotton->setObjectName("statusbotton");
+        statusbotton->setEnabled(true);
+        statusbotton->setMinimumSize(QSize(251, 81));
+
+        gridLayout_4->addWidget(statusbotton, 2, 2, 1, 1);
+
+        gridLayout_2 = new QGridLayout();
+        gridLayout_2->setObjectName("gridLayout_2");
         pushButton = new QPushButton(motor);
         pushButton->setObjectName("pushButton");
 
         gridLayout_2->addWidget(pushButton, 2, 0, 1, 2);
 
-        pushButton_2 = new QPushButton(motor);
-        pushButton_2->setObjectName("pushButton_2");
 
-        gridLayout_2->addWidget(pushButton_2, 3, 0, 1, 1);
-
-        statusbotton = new QPushButton(motor);
-        statusbotton->setObjectName("statusbotton");
-
-        gridLayout_2->addWidget(statusbotton, 6, 0, 1, 2);
-
-
-        gridLayout_3->addLayout(gridLayout_2, 1, 2, 1, 1);
+        gridLayout_4->addLayout(gridLayout_2, 3, 2, 1, 1);
 
 
         retranslateUi(motor);
@@ -361,13 +363,12 @@ public:
         label_25->setText(QCoreApplication::translate("motor", "\346\214\207\347\244\272\350\276\223\345\205\245P\346\263\242\346\262\271\351\227\250\346\233\264\346\226\260", nullptr));
         label_29->setText(QCoreApplication::translate("motor", "\351\224\201\346\241\250\345\256\232\344\275\215\345\274\202\345\270\270\346\210\226\346\234\252\346\240\241\345\207\206", nullptr));
         label_33->setText(QCoreApplication::translate("motor", "\347\241\254\344\273\266\345\274\202\345\270\270", nullptr));
-        label->setText(QCoreApplication::translate("motor", "      \346\233\262\347\272\277\351\200\211\346\213\251    ", nullptr));
         groupBox->setTitle(QCoreApplication::translate("motor", "GroupBox", nullptr));
         label_35->setText(QCoreApplication::translate("motor", "\345\256\232\344\275\215\350\247\222\345\272\246", nullptr));
         label_34->setText(QCoreApplication::translate("motor", "\347\224\265\346\234\272\350\275\254\351\200\237", nullptr));
-        pushButton->setText(QCoreApplication::translate("motor", "\345\220\257\345\212\250", nullptr));
         pushButton_2->setText(QCoreApplication::translate("motor", "\350\276\223\345\207\272\347\224\265\346\265\201", nullptr));
         statusbotton->setText(QCoreApplication::translate("motor", "STATUS BOTTON", nullptr));
+        pushButton->setText(QCoreApplication::translate("motor", "\345\220\257\345\212\250", nullptr));
     } // retranslateUi
 
 };

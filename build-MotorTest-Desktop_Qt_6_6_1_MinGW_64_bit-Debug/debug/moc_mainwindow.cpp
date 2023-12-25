@@ -110,7 +110,7 @@ Q_CONSTINIT static const uint qt_meta_data_CLASSMainWindowENDCLASS[] = {
  // slots: parameters
     QMetaType::Void,
     QMetaType::Void,
-    QMetaType::Void, QMetaType::UInt, 0x80000000 | 6, QMetaType::Bool,    5,    7,    8,
+    QMetaType::Void, QMetaType::UInt, 0x80000000 | 6, QMetaType::UInt,    5,    7,    8,
 
        0        // eod
 };
@@ -132,7 +132,7 @@ Q_CONSTINIT const QMetaObject MainWindow::staticMetaObject = { {
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         QtPrivate::TypeAndForceComplete<quint32, std::false_type>,
         QtPrivate::TypeAndForceComplete<quint16 *, std::false_type>,
-        QtPrivate::TypeAndForceComplete<bool, std::false_type>
+        QtPrivate::TypeAndForceComplete<uint, std::false_type>
     >,
     nullptr
 } };
@@ -145,7 +145,7 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         switch (_id) {
         case 0: _t->CanSetWindow(); break;
         case 1: _t->CanOpenWindow(); break;
-        case 2: _t->SendCAN((*reinterpret_cast< std::add_pointer_t<quint32>>(_a[1])),(*reinterpret_cast< std::add_pointer_t<quint16*>>(_a[2])),(*reinterpret_cast< std::add_pointer_t<bool>>(_a[3]))); break;
+        case 2: _t->SendCAN((*reinterpret_cast< std::add_pointer_t<quint32>>(_a[1])),(*reinterpret_cast< std::add_pointer_t<quint16*>>(_a[2])),(*reinterpret_cast< std::add_pointer_t<uint>>(_a[3]))); break;
         default: ;
         }
     }

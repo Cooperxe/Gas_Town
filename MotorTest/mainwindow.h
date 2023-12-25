@@ -25,7 +25,7 @@ public:
 private slots:
     void CanSetWindow();
     void CanOpenWindow();
-    void SendCAN(quint32 ID,quint16 *charge ,bool state);
+    void SendCAN(quint32 ID,quint16 *charge ,uint state);
 
 private:
     Ui::MainWindow *ui;

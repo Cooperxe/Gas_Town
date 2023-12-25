@@ -21,9 +21,13 @@ public:
     ~motor();
 //    quint16 chargeValue[0];
     quint16 MotorNumber;
+    quint16 chargeValue_1[4];
+    quint16 chargeValue_2[4];
+    quint16 motornum;
+    QString textValue;
     Q_SIGNAL
-        void dischage_chage(quint32,quint16 * ,bool);
-        void sendChargeValue(quint32,quint16 *, bool);
+        void dischage_chage(quint32,quint16 * ,uint);
+        void sendRepeatedly();
 
 
 
@@ -38,6 +42,7 @@ private slots:
 
 private:
     Ui::motor *ui;
+    QTimer *sendTimer;
 
     bool Dateing = false; //数据是否在线// 1秒检查一次
     bool Curve_Mdel = true; //曲线可拖拽

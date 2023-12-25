@@ -113,7 +113,7 @@ Q_CONSTINIT static const uint qt_meta_data_CLASSmotorENDCLASS[] = {
        8,    0,   61,    2, 0x08,    9 /* Private */,
 
  // signals: parameters
-    QMetaType::Void, QMetaType::UInt, 0x80000000 | 3, QMetaType::Bool,    2,    2,    2,
+    QMetaType::Void, QMetaType::UInt, 0x80000000 | 3, QMetaType::UInt,    2,    2,    2,
 
  // slots: parameters
     QMetaType::Void,
@@ -138,7 +138,7 @@ Q_CONSTINIT const QMetaObject motor::staticMetaObject = { {
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         QtPrivate::TypeAndForceComplete<quint32, std::false_type>,
         QtPrivate::TypeAndForceComplete<quint16 *, std::false_type>,
-        QtPrivate::TypeAndForceComplete<bool, std::false_type>,
+        QtPrivate::TypeAndForceComplete<uint, std::false_type>,
         // method 'Make_Curve_Time'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         // method 'Make_Curve'
@@ -159,7 +159,7 @@ void motor::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void 
         auto *_t = static_cast<motor *>(_o);
         (void)_t;
         switch (_id) {
-        case 0: _t->dischage_chage((*reinterpret_cast< std::add_pointer_t<quint32>>(_a[1])),(*reinterpret_cast< std::add_pointer_t<quint16*>>(_a[2])),(*reinterpret_cast< std::add_pointer_t<bool>>(_a[3]))); break;
+        case 0: _t->dischage_chage((*reinterpret_cast< std::add_pointer_t<quint32>>(_a[1])),(*reinterpret_cast< std::add_pointer_t<quint16*>>(_a[2])),(*reinterpret_cast< std::add_pointer_t<uint>>(_a[3]))); break;
         case 1: _t->Make_Curve_Time(); break;
         case 2: _t->Make_Curve(); break;
         case 3: _t->Dog_Time(); break;
@@ -170,7 +170,7 @@ void motor::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void 
     } else if (_c == QMetaObject::IndexOfMethod) {
         int *result = reinterpret_cast<int *>(_a[0]);
         {
-            using _t = void (motor::*)(quint32 , quint16 * , bool );
+            using _t = void (motor::*)(quint32 , quint16 * , uint );
             if (_t _q_method = &motor::dischage_chage; *reinterpret_cast<_t *>(_a[1]) == _q_method) {
                 *result = 0;
                 return;
@@ -210,7 +210,7 @@ int motor::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
 }
 
 // SIGNAL 0
-void motor::dischage_chage(quint32 _t1, quint16 * _t2, bool _t3)
+void motor::dischage_chage(quint32 _t1, quint16 * _t2, uint _t3)
 {
     void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))), const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t2))), const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t3))) };
     QMetaObject::activate(this, &staticMetaObject, 0, _a);

@@ -11,6 +11,8 @@ motor::motor(QWidget *parent) :
     ui->setupUi(this);
     Make_Curve();
     dog.start(1500);
+    sendTimer = new QTimer(this);
+    connect(sendTimer, &QTimer::timeout, this, &motor::sendRepeatedly);
 
 }
 
@@ -66,6 +68,11 @@ void motor::Make_Curve()
     connect(&dataTimer, SIGNAL(timeout()), this, SLOT(Make_Curve_Time()));
     connect(&dog, SIGNAL(timeout()), this, SLOT(Dog_Time()));
 }
+
+void motor::sendRepeatedly() {
+    emit dischage_chage(0X10000100|(this->MotorNumber&0x000000FF),chargeValue_1, 1);
+}
+
 
 void motor::Dog_Time(){
     if(Motor_State[this->MotorNumber]==true){
@@ -136,31 +143,33 @@ void motor::Make_Curve_Time()
 
 void motor::on_pushButton_clicked()
 {
-    quint16 chargeValue[4];
+    // quint16 chargeValue[4];
 
     QString textValue = ui->lineEdit->text(); // 获取lineEdit中的文本值
-    chargeValue[0] = textValue.toUInt(); // 将文本值转换为quint16
+    chargeValue_1[0] = textValue.toUInt(); // 将文本值转换为quint16
 
     QString textValue3 = ui->lineEdit_3->text(); // 获取lineEdit中的文本值
-    chargeValue[2] = textValue3.toUInt(); // 将文本值转换为quint1
+    chargeValue_1[2] = textValue3.toUInt(); // 将文本值转换为quint1
 
-    qDebug() << "Charge in hexadecimal:" << QString("0x%1").arg(chargeValue[0], 0, 16);
-    qDebug() << "Charge in hexadecimal:" << QString("0x%1").arg(chargeValue[2], 0, 16);
+    qDebug() << "Charge in hexadecimal:" << QString("0x%1").arg(chargeValue_1[0], 0, 16);
+    qDebug() << "Charge in hexadecimal:" << QString("0x%1").arg(chargeValue_1[2], 0, 16);
+    sendTimer->start(50);
 
-    emit dischage_chage(0X10000100|(this->MotorNumber&0x000000FF),chargeValue, true);
 }
 
 
 void motor::on_pushButton_2_clicked()
 {
-    quint16 chargeValue[4];
-    QString textValue = ui->lineEdit_2->text(); // 获取lineEdit中的文本值
-    chargeValue[0] = textValue.toUInt(); // 将文本值转换为quint16
+    QString textValue2 = ui->lineEdit_2->text(); // 获取lineEdit中的文本值
+    qDebug()<<"ui->lineEdit_2->text"<<textValue2;
+     // 将文本值转换为quint16，并检查转换是否成功
 
-    quint16 motornum = ((this->MotorNumber)<<8);
+    chargeValue_2[0] = textValue2.toUInt();
+    quint16 motornum = ((this->MotorNumber) << 8);
 
-    qDebug() << "Charge in hexadecimal:" << QString("0x%1").arg(chargeValue[0], 0, 16);
-    qDebug()<<"motornum:"<<motornum;
-    emit dischage_chage(0X1000F0FF | motornum, chargeValue, true);
+    qDebug() << "Charge in hexadecimal:" << QString("0x%1").arg(chargeValue_2[0], 0, 16);
+    qDebug() << "motornum:" << motornum;
 
+    emit dischage_chage(0X1000F0FF | motornum, chargeValue_2, 2);
 }
+
