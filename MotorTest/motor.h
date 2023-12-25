@@ -23,6 +23,7 @@ public:
     quint16 MotorNumber;
     Q_SIGNAL
         void dischage_chage(quint32,quint16 * ,bool);
+        void sendChargeValue(quint32,quint16 *, bool);
 
 
 

@@ -83,9 +83,9 @@ void MainWindow::ModelViewShow()
         verticalSplitter->addWidget(horizontalSplitter);
 
         connect(Motor, SIGNAL(dischage_chage(quint32, quint16 *, bool)), this, SLOT(SendCAN(quint32, quint16*, bool)));
+
     }
 }
-
 
 
 //can设置 槽
